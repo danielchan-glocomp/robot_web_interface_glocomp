@@ -10,7 +10,7 @@ ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 Then in another terminal and run
 
 ```
-cd robot_web_interface_glocomp
+cd robot_web_interface_glocomp/robot_web_interface
 python3 -m https.server 8000
 ```
 
