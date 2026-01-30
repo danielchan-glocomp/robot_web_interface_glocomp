@@ -16,11 +16,11 @@ python3 -m https.server 8000
 ```
 
 ### Features
-> General robot status
-> Battery percentage
-> Front and back camera streams
-> Teleop control
-> Smartphone and computer support
+> General robot status \n
+> Battery percentage\n
+> Front and back camera streams\n
+> Teleop control\n
+> Smartphone and computer support\n
 
 ### ToDo
 > Change camera stream from ros message to webrtc
