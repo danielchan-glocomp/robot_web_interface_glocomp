@@ -11,7 +11,7 @@ Then in another terminal and run
 
 ```
 cd robot_web_interface_glocomp/robot_web_interface
-python3 -m https.server 8000
+python3 -m http.server 8000
 ```
 
 ### Features
@@ -20,8 +20,11 @@ python3 -m https.server 8000
 > - Front and back camera streams
 > - Teleop control
 > - Smartphone and computer support
+> - /map topic is being displayed
 
 ### ToDo
 > - Change camera stream from ros message to webrtc
-> - Get map and robot TFs displayed
+> - Get robot TFs displayed
 > - Intergration with slam on the robot
+> - Display robot position on map
+source /opt/ros/humble/setup.bash
