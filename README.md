@@ -20,11 +20,11 @@ python3 -m http.server 8000
 > - Front and back camera streams
 > - Teleop control
 > - Smartphone and computer support
-> - /map topic is being displayed
+> - /map topic is being displayed and robot position is being displayed
 
 ### ToDo
 > - Change camera stream from ros message to webrtc
 > - Get robot TFs displayed
 > - Intergration with slam on the robot
-> - Display robot position on map
+> - map interaction
 source /opt/ros/humble/setup.bash
