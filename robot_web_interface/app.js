@@ -147,7 +147,7 @@ var cmdVel = new ROSLIB.Topic({
 function sendJoystickCommand(x, y) {
     var twistMsg = {
         linear: { x: y/2, y: 0, z: 0 },
-        angular: { x: 0, y: 0, z: x/2 }
+        angular: { x: 0, y: 0, z: -x/2 }
     };
 
     cmdVel.publish(twistMsg);
@@ -327,40 +327,3 @@ backcam.subscribe(function(message) {
         document.getElementById('backCameraStatus').textContent = 'Live';
     };
 });
-
-var viewer = new ROS2D.Viewer({
-    divID: 'mapCanvas',
-    width: 600,
-    height: 600
-});
-
-var gridClient = new ROS2D.OccupancyGridClient({
-    ros: ros,
-    rootObject: viewer.scene,
-    viewer : viewer,
-    serverName: '/navigate_to_pose',
-    topic: '/map',
-    continuous: true
-});
-
-gridClient.on('change', function() {
-    var grid = gridClient.currentGrid;
-    if (!grid) return;
-
-    // console.log('Grid received:', grid);
-    // console.log('Grid width:', grid.width, 'height:', grid.height);
-    // console.log('Grid resolution:', grid.resolution);
-    // console.log('Grid pose:', grid.pose);
-    // console.log('Viewer scene:', viewer.scene);
-
-    if (!viewer.scene.contains(grid)) {
-        viewer.scene.addChild(grid);
-        console.log('Grid added to scene');
-    }
-
-    viewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
-    viewer.shift(grid.pose.position.x, grid.pose.position.y);
-
-});
-
-console.log('Dashboard initialized. Waiting for ROS connection...');

@@ -296,24 +296,37 @@
         </div>
 
         <!-- Map Display -->
-        <div class="card" style="margin-bottom: 20px;">
+        <!-- <div class="card" style="margin-bottom: 20px;">
             <div class="card-title">🗺️ Occupancy Grid Map</div>
             <div class="map-container">
-                <div id="mapCanvas" style="width:600px; height:600px;"></div>
+                <div id="mapCanvas" style="width:2000px; height:2000px;"></div>
             </div>
             <div class="data-row" style="margin-top: 10px;">
                 <span class="data-label">Map Status:</span>
                 <span class="data-value" id="mapStatus">Waiting for map data...</span>
             </div>
+        </div> -->
+
+        <div class="card" style="margin-bottom: 20px;">
+            <div class="card-title">🗺️ Occupancy Grid Map</div>
+            <canvas id="mapCanvas" class="map-container" style="border: 1px solid #444; cursor: grab;"></canvas>
+            <div class="data-row" style="margin-top: 10px;">
+                <span class="data-label">Zoom Level:</span>
+                <span class="data-value" id="zoomLevel">1.0x</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Map Status:</span>
+                <span class="data-value" id="mapStatus">Waiting for map data...</span>
+            </div>
         </div>
+
     </div>
     <script src="libs/easeljs.min.js"></script>
     <script src="libs/eventemitter2.min.js"></script>
     <script src="libs/roslib.min.js"></script>
     <script src="libs/ros2d.min.js"></script>
     <script src="app.js"></script>
-
-
+    <script src="navigation.js"></script>
 
 </body>
 </html>
